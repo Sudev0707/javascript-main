@@ -1,0 +1,345 @@
+/* Body background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: url("../assets/img/bluesea.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Glassmorphic card */
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 25px;
+  width: 90%;
+  max-width: 420px;
+  padding: 35px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.header h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Search box */
+
+/* Search box */
+.search-box {
+  display: flex;
+  width: 100%;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 8px 25px rgba(4, 100, 160, 0.446);
+  transform: scale(1.02);
+}
+
+/* Input full width */
+.input-box {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  color: #fff;
+}
+
+.input-box::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Search button with effects */
+.search-btn {
+  background: linear-gradient(135deg, #00e5ff, #0072ff);
+  border: none;
+  outline: none;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: linear-gradient(135deg, #00bcd4, #0066cc);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.6);
+}
+
+.search-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 229, 255, 0.4);
+}
+
+/* .search-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+} */
+
+/* Weather body */
+.weather-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+/* Temperature & description */
+.weather-box {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin: 0;
+}
+
+.temperature sup {
+  font-size: 1.2rem;
+  top: -10px;
+  margin-left: 3px;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
+/* Weather details row */
+.weather-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+.weather-detail > div {
+  flex: 1 1 120px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.weather-detail > div:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.weather-detail i {
+  font-size: 1.3rem;
+  color: #00e5ff;
+  margin-bottom: 6px;
+}
+
+.weather-detail .text span {
+  font-weight: bold;
+  display: block;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.weather-detail .text p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: #e0e0e0;
+}
+
+.humidity,
+.wind,
+.feels-like,
+.pressure,
+.visibility,
+.air-quality {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.air-quality p {
+  font-size: 0.75rem;
+  color: #ffdd57;
+}
+
+/* -------------------- Responsive Styles -------------------- */
+
+/* Large desktops */
+@media (min-width: 1200px) {
+  .card {
+    width: 400px;
+    padding: 40px 30px;
+  }
+  .temperature {
+    font-size: 4rem;
+  }
+  .description {
+    font-size: 1.2rem;
+  }
+  .weather-detail > div {
+    padding: 15px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .card {
+    max-width: 90%;
+    padding: 35px 25px;
+  }
+  .temperature {
+    font-size: 2.8rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .weather-detail > div {
+    flex: 1 1 100px;
+    padding: 12px;
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+  .card {
+    padding: 30px 20px;
+  }
+  .temperature {
+    font-size: 2.5rem;
+  }
+  .description {
+    font-size: 0.95rem;
+  }
+  .weather-detail > div {
+    flex: 1 1 48%;
+    padding: 10px;
+  }
+}
+
+/* Mobile Medium */
+@media (max-width: 480px) {
+  .card {
+    width: 95%;
+    padding: 25px 15px;
+  }
+  .header h2 {
+    font-size: 1.6rem;
+  }
+  .input-box {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+  .search-btn {
+    font-size: 1rem;
+    padding: 0 12px;
+  }
+  .temperature {
+    font-size: 2rem;
+  }
+  .temperature sup {
+    font-size: 1rem;
+  }
+  .description {
+    font-size: 0.85rem;
+  }
+  .weather-detail {
+    gap: 8px;
+  }
+  .weather-detail > div {
+    flex: 1 1 100%;
+    padding: 8px;
+  }
+  .weather-detail i {
+    font-size: 1rem;
+  }
+  .weather-detail .text span {
+    font-size: 0.9rem;
+  }
+  .weather-detail .text p {
+    font-size: 0.7rem;
+  }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 360px) {
+  .card {
+    padding: 20px 12px;
+  }
+  .header h2 {
+    font-size: 1.4rem;
+  }
+  .temperature {
+    font-size: 1.8rem;
+  }
+  .temperature sup {
+    font-size: 0.9rem;
+  }
+  .description {
+    font-size: 0.8rem;
+  }
+  .weather-detail > div {
+    padding: 6px;
+  }
+  .weather-detail i {
+    font-size: 0.9rem;
+  }
+  .weather-detail .text span {
+    font-size: 0.8rem;
+  }
+  .weather-detail .text p {
+    font-size: 0.65rem;
+  }
+}
