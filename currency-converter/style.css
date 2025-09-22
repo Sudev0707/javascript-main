@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-color: #6a11cb;
+  padding: 10px;
+}
+
+/* General container */
+.container {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px; /* smaller padding */
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.26);
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* Heading */
+.container h1 {
+  margin-bottom: 20px;
+  font-size: 24px; /* smaller font */
+  color: #333;
+}
+
+/* Input container: label, input, select in a row */
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* slightly smaller gap */
+  margin-bottom: 15px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.input-container label {
+  flex: 0 0 20%; 
+  font-weight: bold;
+  color: #555;
+  text-align: left;
+  font-size: 14px; /* smaller font */
+}
+
+.input-container input {
+ flex: 1 1 auto;
+  padding: 8px 10px; /* smaller padding */
+  font-size: 14px; /* smaller font */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.input-container select {
+    flex: 0 0 20%; 
+  padding: 8px 10px; /* smaller padding */
+  font-size: 14px; /* smaller font */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Arrow between input rows */
+.arrow {
+  text-align: center;
+  margin: 8px 0 15px;
+  font-size: 20px; /* smaller arrow */
+  color: #007bff;
+}
+
+/* Result styling */
+.result {
+  margin-top: 15px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 15px; /* smaller padding */
+  border-radius: 8px;
+  font-size: 16px; /* smaller font */
+  font-weight: bold;
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-container label,
+  .input-container input,
+  .input-container select {
+    flex: 1 1 100%;
+    font-size: 14px; /* keep input font small */
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 20px;
+  }
+
+  .result {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .arrow {
+    font-size: 16px;
+  }
+}
