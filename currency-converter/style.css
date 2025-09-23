@@ -11,61 +11,53 @@ body {
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
-  background-color: #6a11cb;
   padding: 10px;
 }
 
-/* General container */
+/* Container */
 .container {
   width: 100%;
-  max-width: 700px;
-  padding: 20px; /* smaller padding */
+  max-width: 400px;
+  padding: 25px;
   background-color: #f9f9f9;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin: 20px auto;
 }
 
 /* Heading */
 .container h1 {
-  margin-bottom: 20px;
-  font-size: 24px; /* smaller font */
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: bold;
   color: #333;
 }
 
-/* Input container: label, input, select in a row */
+/* Input Group */
 .input-container {
   display: flex;
-  align-items: center;
-  gap: 8px; /* slightly smaller gap */
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 15px;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .input-container label {
-  flex: 0 0 20%; 
+  margin-bottom: 5px;
   font-weight: bold;
   color: #555;
-  text-align: left;
-  font-size: 14px; /* smaller font */
+  font-size: 14px;
 }
 
-.input-container input {
- flex: 1 1 auto;
-  padding: 8px 10px; /* smaller padding */
-  font-size: 14px; /* smaller font */
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
+.input-container input,
 .input-container select {
-    flex: 0 0 20%; 
-  padding: 8px 10px; /* smaller padding */
-  font-size: 14px; /* smaller font */
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  transition: border 0.3s, box-shadow 0.3s;
+  margin-bottom: 10px;
 }
 
 .input-container input:focus,
@@ -74,49 +66,46 @@ body {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
-/* Arrow between input rows */
+/* Arrow */
 .arrow {
-  text-align: center;
-  margin: 8px 0 15px;
-  font-size: 20px; /* smaller arrow */
+  font-size: 20px;
   color: #007bff;
+  margin: 10px 0;
 }
 
-/* Result styling */
+/* Result Button Style */
 .result {
   margin-top: 15px;
   background-color: #007bff;
-  color: #fff;
-  padding: 12px 15px; /* smaller padding */
+  color: white;
+  padding: 14px;
   border-radius: 8px;
-  font-size: 16px; /* smaller font */
+  font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsive adjustments for tablets */
+.result:hover {
+  background-color: #005ecb;
+}
+
+/* Responsive for tablets */
 @media (max-width: 768px) {
-  .input-container {
-    flex-direction: column;
-    align-items: stretch;
+  .container {
+    padding: 20px;
   }
 
-  .input-container label,
-  .input-container input,
-  .input-container select {
-    flex: 1 1 100%;
-    font-size: 14px; /* keep input font small */
+  .container h1 {
+    font-size: 22px;
   }
 
   .arrow {
     font-size: 18px;
   }
-
-  .container {
-    padding: 15px;
-  }
 }
 
-/* Responsive adjustments for mobile */
+/* Responsive for mobile */
 @media (max-width: 480px) {
   .container h1 {
     font-size: 20px;
@@ -124,7 +113,7 @@ body {
 
   .result {
     font-size: 14px;
-    padding: 10px 12px;
+    padding: 12px;
   }
 
   .arrow {
